@@ -26,3 +26,25 @@ class FindingSink:
                     continue
         
         return result
+
+    def topologicalSort(self, adjList):
+        return self._dfs(adjList)
+
+    def _dfs(self, adjList):
+        visited = [False for i in range(len(adjList))]
+        result = []
+
+        for v in range(len(adjList)):
+            if visited[v] == False:
+                self._explore(adjList, visited, result, v)
+
+        return result
+
+    def _explore(self, adjList, visited, result, v):
+        visited[v] = True
+
+        for u in adjList[v]:
+            if visited[u] == False:
+                self._explore(adjList, visited, result, u)
+
+        result.insert(0, v)

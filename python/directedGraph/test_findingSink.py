@@ -9,5 +9,8 @@ class FindingSinkTest(unittest.TestCase):
     def test_linearOrder(self):
         self.assertEqual([0, 4, 1, 2, 3], self.fs.linearOrder(self.adjList))
 
+    def test_topologicalSort(self):
+        self.assertEqual([0, 4, 1, 2, 3], self.fs.topologicalSort(self.adjList))
+
 if __name__ == '__main__':
     unittest.main()
