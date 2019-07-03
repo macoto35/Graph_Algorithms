@@ -4,7 +4,6 @@ class FindingSink:
 
     def linearOrder(self, adjList):
         result = []
-        numOfVertex = len(adjList)
 
         while True:
             # follow a path until cannot extend. find sink v.
